@@ -1,16 +1,16 @@
 import { Navigate, createBrowserRouter } from "react-router-dom";
-// import App from "../App";
-import Test from "../components/Test";
 import Login from "../pages/Login";
+import MainLayout from "../components/layout/MainLayout";
+import PrivateRoute from "./PrivateRoute";
 
 const router = createBrowserRouter([
     {
         path: '/',
-        element: <Navigate to="/my-tasks" />,
+        element: <Navigate to="/dashboard" />,
     },
     {
-        path: '/my-tasks',
-        element: <Test />
+        path: '/dashboard',
+        element: <PrivateRoute><MainLayout /></PrivateRoute>
     },
     {
         path: '/login',
