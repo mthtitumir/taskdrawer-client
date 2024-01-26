@@ -1,13 +1,14 @@
-// import { createElement } from "react";
+// import Test from "../components/Test";
 import Demo from "../pages/dashboard/Demo";
 import { TeamOutlined, FileDoneOutlined } from '@ant-design/icons';
+import MyTasks from "../pages/dashboard/MyTasks";
 
 export const userPaths = [
     {
         name: 'My Tasks',
-        path: 'dashboard',
+        path: 'my-tasks',
         icon: <FileDoneOutlined />,
-        element: <Demo />
+        element: <MyTasks />
     },
     {
       name: 'My Teams',
@@ -15,14 +16,14 @@ export const userPaths = [
       children: [
         {
             name: 'Academic Semester ',
-            path: 'academic-semester',
+            path: 'projects/academic-semester',
             icon: <TeamOutlined />,
             element: <Demo />
         }
       ]
     },
     {
-        name: 'User Management',
+        name: 'Management',
         children: [
             {
                 name: 'Create Admin',

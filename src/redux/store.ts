@@ -12,6 +12,7 @@ import {
   persistStore
 } from "redux-persist";
 import storage from "redux-persist/lib/storage";
+import taskReducer from "./features/task/taskSlice";
 
 const persistConfig = {
   key: "auth",
@@ -22,6 +23,7 @@ export const store = configureStore({
   reducer: {
     [baseApi.reducerPath]: baseApi.reducer,
     auth: persistedAuthReducer,
+    task: taskReducer,
   },
   middleware: (getDefaultMiddlewares) =>
     getDefaultMiddlewares({

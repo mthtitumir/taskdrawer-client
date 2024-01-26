@@ -1,6 +1,5 @@
 import { NavLink } from "react-router-dom";
 import { TSidebarRoute, TUserPath } from "../types";
-// import { createElement } from "react";
 
 export const sidebarItemsGenerator = (items: TUserPath[]) => {
   
@@ -9,7 +8,7 @@ export const sidebarItemsGenerator = (items: TUserPath[]) => {
       acc.push({
         key: item.name,
         icon: item?.icon,
-        label: <NavLink to={`/${item.path}`}>{item.name}</NavLink>,
+        label: <NavLink to={`${item.path}`}>{item.name}</NavLink>,
       });
     }
     if (item.children) {
@@ -20,7 +19,7 @@ export const sidebarItemsGenerator = (items: TUserPath[]) => {
         children: item.children.map((child) => ({
           key: child.name,
           icon: child?.icon,
-          label: <NavLink to={`/login`}>{child.name}</NavLink>,
+          label: <NavLink to={`${child.path}`}>{child.name}</NavLink>,
         })),
       });
     }

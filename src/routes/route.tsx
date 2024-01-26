@@ -1,7 +1,9 @@
 import { Navigate, createBrowserRouter } from "react-router-dom";
 import Login from "../pages/Login";
-import MainLayout from "../components/layout/MainLayout";
+import DashboardLayout from "../components/layout/DashboardLayout";
 import PrivateRoute from "./PrivateRoute";
+import { routeGenerator } from "../utils/routeGenerator";
+import { userPaths } from "./user.route";
 
 const router = createBrowserRouter([
     {
@@ -10,7 +12,8 @@ const router = createBrowserRouter([
     },
     {
         path: '/dashboard',
-        element: <PrivateRoute><MainLayout /></PrivateRoute>
+        element: <PrivateRoute><DashboardLayout /></PrivateRoute>,
+        children: routeGenerator(userPaths),
     },
     {
         path: '/login',
